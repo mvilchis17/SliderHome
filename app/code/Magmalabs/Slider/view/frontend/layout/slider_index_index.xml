@@ -1,0 +1,25 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+
+	<head>
+        <title>Slider</title>
+        <!-- 
+		demo
+		<css src="Magmalabs_Slider::css/css.css"/>
+		<script src="Magmalabs_Slider::js/js.js"/>
+		<css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+		<script src="path/file.js" defer="defer"/>
+		<link src="http://url.com" src_type="url"/>
+		<remove src="path/remove/file.css"/>
+
+		-->
+    </head> 
+
+    <body>
+
+        <referenceContainer name="content">
+            <block class="Magmalabs\Slider\Block\Index\Index" name="slider_index_index" template="Magmalabs_Slider::slider_index_index.phtml"/>
+        </referenceContainer>
+
+
+    </body>
+</page>

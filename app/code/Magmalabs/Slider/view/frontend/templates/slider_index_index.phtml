@@ -1,0 +1,45 @@
+
+<?php $blockObj= $block->getLayout()->createBlock('Magmalabs\Slider\Block\Index\Index'); ?>
+<?php $products = $blockObj->getProducts(); ?>
+
+<?php if($products): ?>
+    <h2><?php echo $products['slider_name'] ?></h2>
+	<ul class="bxslider">
+	    <?php foreach($products['products'] as $item): ?>
+	        <li>
+	            <a href="<?php echo $item['url'] ?>">
+	                <img alt="" src="<?php echo $item['image_url'] ?>" />
+	            </a>
+                <div class="bxslider-detaill">
+                    <a href="<?php echo $item['url'] ?>" class="slider-name"><?php echo $item['name'] ?></a><br/>
+                    <a href="<?php echo $item['url'] ?>" class="slider-price"><?php echo $item['price'] ?></a><br/>
+                </div>
+	            
+	        </li>        
+	    <?php endforeach; ?>
+	</ul>
+
+    <script>
+        require(['jquery', 'slider'], function($){
+            $(document).ready(function() {
+                jQuery('.bxslider').bxSlider({
+                    slideWidth       : 300,
+                    minSlides        : <?php echo count($products['products']); ?>,
+                    maxSlides        : <?php echo count($products['products']); ?>,
+                    moveSlides       : 1,
+                    responsive       : true,
+                    autoHover        : true,
+                    auto             : true,
+                    slideMargin      : 10
+                });
+            });
+        });
+    </script>
+
+<?php endif; ?>
+
+
+
+
+
+
